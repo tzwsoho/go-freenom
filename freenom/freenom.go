@@ -970,6 +970,8 @@ func DeleteRecord(domain string, record *DomainRecord) (err error) {
 }
 
 // RenewFreeDomain 免费域名续期
+// 参数 domain 若为空字符串，则续期所有域名，否则只续期指定域名
+// 参数 months 要续期的月份数，最少 1 个月，最多 12 个月
 // 返回 免费域名和其续期结果
 func RenewFreeDomain(domain string, months int) (renewedDomains map[string]string, err error) {
 	renewedDomains = make(map[string]string)
